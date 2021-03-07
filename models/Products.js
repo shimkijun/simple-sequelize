@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes){
     );
 
     Products.prototype.dateFormat = (date) =>{
-        moment(date).format('YYYY-MM-DD')
+        return moment(date).format('YYYY-MM-DD')
     };
 
     return Products;
