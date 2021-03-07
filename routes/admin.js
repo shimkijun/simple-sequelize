@@ -15,6 +15,4 @@ router.post('/products/write', ( req , res ) => {
     res.send(req.body);
 });
 
-router.get('/products/detail/:id', ctrl.get_products_detail );
-
 module.exports = router;

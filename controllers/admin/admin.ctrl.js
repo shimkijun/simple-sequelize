@@ -31,7 +31,6 @@ exports.get_products_edit = ( req , res ) => {
 }
 
 exports.post_products_edit = ( req , res ) => {
-
     models.Products.update({
         name : req.body.name,
         price : req.body.price,
@@ -41,7 +40,16 @@ exports.post_products_edit = ( req , res ) => {
     }).then( () =>{
         res.redirect('/admin/products/detail/'+ req.params.id)
     })
+}
 
+exports.get_products_delete = ( req , res ) => {
+    models.Products.destroy({
+        where : {
+            id : req.params.id
+        }
+    }).then( () => {
+        res.redirect('/admin/products')
+    })
 }
 
 
